@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casino - Bono de Bienvenida</title>
+
+  <style>
+    /* --- REINICIO BÁSICO --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial Black', 'gadget', sans-serif;
+    }
+
+    /* --- CONFIGURACIÓN GENERAL --- */
+    body {
+      background: black;
+      color: white;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url('fondo.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* --- ANIMACIÓN LATIDO DE CORAZÓN --- */
+    @keyframes latido {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.1); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.1); }
+      70% { transform: scale(1); }
+    }
+
+    /* --- ESTILOS DE LAS IMÁGENES DE ESQUINA --- */
+    .esquina {
+      position: absolute;
+      width: 250px;
+      z-index: 10;
+      pointer-events: none;
+      filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));
+    }
+
+    .top-left { top: 0; left: 0; }
+    .top-right { top: 0; right: 0; }
+    .bottom-left { bottom: 0; left: 0; }
+    .bottom-right { bottom: 0; right: 0; }
+
+
+    /* --- CONTENIDO CENTRAL --- */
+    .contenido {
+      position: relative;
+      z-index: 20;
+      text-align: center;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    /* TÍTULO: DORADO NEÓN BRILLANTE */
+    .titulo {
+      font-size: 3.5rem;
+      color: #FFD700; /* Dorado base */
+      /* Efecto NEÓN con múltiples sombras */
+      text-shadow: 
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FFD700,
+        0 0 40px #FF8C00; /* Un toque naranja para profundidad */
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    /* 100%: DORADO NEÓN + LATIDO */
+    .porcentaje {
+      font-size: 4.5rem;
+      font-weight: bold;
+      
+      /* Mismo color y efecto NEÓN que el título */
+      color: #FFD700;
+      text-shadow: 
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FFD700,
+        0 0 40px #FF8C00;
+
+      /* APLICAMOS EL EFECTO LATIDO */
+      animation: latido 1.5s infinite ease-in-out;
+    }
+
+    .main-slot-img {
+      width: 400px;
+      filter: drop-shadow(0 0 20px gold);
+    }
+
+    .logo-casino {
+      display: block;
+      margin: 15px auto;
+      width: 350px;
+      filter: drop-shadow(0 0 25px red) brightness(1.2);
+    }
+
+    .click-text {
+      font-size: 1.4rem;
+      margin: 25px 0;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #FF4444;
+      font-weight: normal;
+    }
+
+    /* --- BOTÓN DE WHATSAPP CON LATIDO --- */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      background: linear-gradient(45deg, #25d366, #128C7E);
+      padding: 12px 45px;
+      border-radius: 50px;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 25px #25d366;
+      border: 2px solid rgba(255,255,255,0.3);
+
+      /* APLICAMOS EL EFECTO LATIDO */
+      animation: latido 1.5s infinite ease-in-out;
+    }
+
+    .whatsapp-btn:hover {
+      /* Pausamos la animación al pasar el mouse si se prefiere, o lo dejamos */
+      cursor: pointer;
+      filter: brightness(1.2);
+    }
+
+    .whatsapp-icon {
+      width: 35px;
+      height: 35px;
+    }
+
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .esquina { width: 140px; }
+      .titulo { font-size: 2.2rem; }
+      .porcentaje { font-size: 2.5rem; }
+      .main-slot-img { width: 220px; }
+      .logo-casino { width: 240px; }
+      .flex-row { gap: 10px; margin: 10px 0; }
+      .whatsapp-btn { font-size: 1.2rem; padding: 10px 30px; }
+      .whatsapp-icon { width: 28px; height: 28px; }
+      .click-text { margin: 20px 0; font-size: 1.2rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <img src="cartas_esquina.png" class="esquina top-left" alt="cartas casino">
+    <img src="cartas_esquina.png" class="esquina bottom-right" alt="cartas casino">
+    
+    <img src="fichas_esquina.png" class="esquina top-right" alt="fichas casino">
+    <img src="fichas_esquina.png" class="esquina bottom-left" alt="fichas casino">
+
+    <div class="contenido">
+      <h1 class="titulo">BONO DE BIENVENIDA</h1>
+      
+      <div class="flex-row">
+        <span class="porcentaje">100%</span>
+        
+        <img src="slot_central.png" class="main-slot-img" alt="Slot 777 jackpot">
+        
+        <span class="porcentaje">100%</span>
+      </div>
+
+      <img src="logo_casino.png" class="logo-casino" alt="Logo Casino rojo">
+
+      <p class="click-text">CLICK AQUÍ</p>
+
+      <a href="https://wa.me/5491167953489s" target="_blank" class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp Icono">
+        <span>WHATSAPP</span>
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
